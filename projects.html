@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="projects-page">
+    <div class="beam-container"></div>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="filter-container">
+                <button class="project-button" id="filterButton">
+                    Filter Projects
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                    </svg>
+                </button>
+                <div class="filter-dropdown" id="filterDropdown">
+                    <div class="filter-option active" data-value="all">All Projects</div>
+                    <div class="filter-option" data-value="web">Web Development</div>
+                    <div class="filter-option" data-value="data">Data Science</div>
+                    <div class="filter-option" data-value="vision">Computer Vision</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projects">
+            <div class="projects-container">
+                <div class="projects-header">
+                    <div class="header-content">
+                        <h3>My Work</h3>
+                        <h2>All Projects</h2>
+                        <p>Browse through my complete portfolio of projects</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Web Development Projects -->
+                    <div class="project-card featured" data-category="web">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">E-Commerce Platform</h3>
+                                <p class="project-description">A full-stack e-commerce solution built with React and Node.js</p>
+                            </div>
+                            <ul class="project-features">
+                                <li class="project-feature">React.js</li>
+                                <li class="project-feature">Node.js</li>
+                                <li class="project-feature">MongoDB</li>
+                            </ul>
+                            <a href="#" class="project-button">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="web">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">Task Manager</h3>
+                                <p class="project-description">A Vue.js-powered task management application</p>
+                            </div>
+                            <ul class="project-features">
+                                <li class="project-feature">Vue.js</li>
+                                <li class="project-feature">Vuex</li>
+                                <li class="project-feature">Firebase</li>
+                            </ul>
+                            <a href="#" class="project-button">View Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Data Science Projects -->
+                    <div class="project-card" data-category="data">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">Customer Segmentation</h3>
+                                <p class="project-description">ML-based customer segmentation for targeted marketing</p>
+                            </div>
+                            <ul class="project-features">
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">Scikit-learn</li>
+                                <li class="project-feature">Pandas</li>
+                            </ul>
+                            <a href="#" class="project-button">View Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Computer Vision Projects -->
+                    <div class="project-card" data-category="vision">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">Object Detection</h3>
+                                <p class="project-description">Real-time object detection using YOLO</p>
+                            </div>
+                            <ul class="project-features">
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">OpenCV</li>
+                                <li class="project-feature">YOLO</li>
+                            </ul>
+                            <a href="#" class="project-button">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="cartoon.js"></script>
+    <script>
+        // Project filtering functionality
+        const filterButton = document.getElementById('filterButton');
+        const filterDropdown = document.getElementById('filterDropdown');
+        const filterOptions = document.querySelectorAll('.filter-option');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        // Toggle dropdown
+        filterButton.addEventListener('click', () => {
+            filterDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!filterButton.contains(e.target) && !filterDropdown.contains(e.target)) {
+                filterDropdown.classList.remove('show');
+            }
+        });
+
+        // Handle filter selection
+        filterOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const selectedValue = option.dataset.value;
+                
+                // Update active state
+                filterOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (selectedValue === 'all' || card.dataset.category === selectedValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Close dropdown
+                filterDropdown.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html> 
