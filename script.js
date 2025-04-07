@@ -163,4 +163,5 @@ window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const progress = (scrolled / documentHeight) * 100;
     timeline.style.height = `${progress}%`;
-}); 
+});
+
