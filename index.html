@@ -6,6 +6,8 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="config.js"></script>
 </head>
 <body>
     <div class="beam-container"></div>
@@ -44,41 +46,43 @@
                     <div class="project-card featured">
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">E-Commerce Platform</h3>
-                                <p class="project-description">A full-stack e-commerce solution built with React and Node.js</p>
+                                <h3 class="project-title">AI-Powered Content Creation Platform</h3>
+                                <p class="project-description">An AI-driven platform for generating social media posts, blogs, and marketing materials with customizable tone and optimization features.</p>
                             </div>
                             <ul class="project-features">
-                                <li class="project-feature">React.js</li>
-                                <li class="project-feature">Node.js</li>
-                                <li class="project-feature">MongoDB</li>
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">OpenAI GPT</li>
+                                <li class="project-feature">Flask/Django</li>
                             </ul>
                             <a href="#" class="project-button">View Project</a>
                         </div>
                     </div>
+
                     <div class="project-card">
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">Task Manager</h3>
-                                <p class="project-description">A Vue.js-powered task management application</p>
+                                <h3 class="project-title">Fraud Detection System</h3>
+                                <p class="project-description">Machine learning model for detecting fraudulent transactions with real-time detection and reporting capabilities.</p>
                             </div>
                             <ul class="project-features">
-                                <li class="project-feature">Vue.js</li>
-                                <li class="project-feature">Vuex</li>
-                                <li class="project-feature">Firebase</li>
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">Scikit-learn</li>
+                                <li class="project-feature">Flask</li>
                             </ul>
                             <a href="#" class="project-button">View Project</a>
                         </div>
                     </div>
+
                     <div class="project-card">
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">Portfolio Website</h3>
-                                <p class="project-description">Modern portfolio built with Next.js and TailwindCSS</p>
+                                <h3 class="project-title">Stock Price Prediction Model</h3>
+                                <p class="project-description">Advanced LSTM neural network model for predicting stock price movements with time series analysis and visualization.</p>
                             </div>
                             <ul class="project-features">
-                                <li class="project-feature">Next.js</li>
-                                <li class="project-feature">TailwindCSS</li>
-                                <li class="project-feature">Framer Motion</li>
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">TensorFlow</li>
+                                <li class="project-feature">Keras</li>
                             </ul>
                             <a href="#" class="project-button">View Project</a>
                         </div>
@@ -95,17 +99,38 @@
                 <div class="projects-header">
                     <h3>Expertise</h3>
                     <h2>Skills & Technologies</h2>
-                    <p>Technologies and tools I specialize in</p>
+                    <p>Core competencies in AI, Machine Learning, and Data Science</p>
                 </div>
                 <div class="skills-grid">
-                    <div class="skill-item">React.js</div>
-                    <div class="skill-item">Node.js</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">TypeScript</div>
-                    <div class="skill-item">Next.js</div>
-                    <div class="skill-item">Vue.js</div>
-                    <div class="skill-item">TailwindCSS</div>
-                    <div class="skill-item">MongoDB</div>
+                    <!-- AI & ML -->
+                    <div class="skill-item">TensorFlow</div>
+                    <div class="skill-item">PyTorch</div>
+                    <div class="skill-item">Scikit-learn</div>
+                    <div class="skill-item">Keras</div>
+                    <div class="skill-item">OpenAI GPT</div>
+                    <div class="skill-item">Hugging Face</div>
+                    <div class="skill-item">NLTK</div>
+                    <div class="skill-item">spaCy</div>
+
+                    <!-- Data Science -->
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">Pandas</div>
+                    <div class="skill-item">NumPy</div>
+                    <div class="skill-item">SciPy</div>
+                    <div class="skill-item">Matplotlib</div>
+                    <div class="skill-item">Seaborn</div>
+                    <div class="skill-item">Jupyter</div>
+                    <div class="skill-item">SQL</div>
+
+                    <!-- Tools & Frameworks -->
+                    <div class="skill-item">Flask</div>
+                    <div class="skill-item">Django</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">AWS</div>
+                    <div class="skill-item">MLflow</div>
+                    <div class="skill-item">DVC</div>
+                    <div class="skill-item">Ray</div>
                 </div>
             </div>
         </section>
@@ -117,10 +142,10 @@
                     <h2>Contact Me</h2>
                     <p>Let's discuss your next project</p>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
+                <form class="contact-form" id="contact-form" onsubmit="return sendEmail(event)">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
                     <button type="submit" class="primary-button">Send Message</button>
                 </form>
                 <div class="social-links">
@@ -134,5 +159,49 @@
 
     <script src="script.js"></script>
     <script src="cartoon.js"></script>
+    <script>
+        (function() {
+            // Initialize EmailJS with public key from environment variable
+            emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
+        })();
+
+        function sendEmail(e) {
+            e.preventDefault();
+
+            const btn = document.querySelector('form button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+            };
+
+            emailjs.send(
+                process.env.EMAILJS_SERVICE_ID,
+                process.env.EMAILJS_TEMPLATE_ID,
+                templateParams
+            )
+                .then(function(response) {
+                    btn.textContent = 'Message Sent!';
+                    document.getElementById('contact-form').reset();
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }, 3000);
+                }, function(error) {
+                    btn.textContent = 'Error Sending';
+                    console.error('Failed to send message:', error);
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                    }, 3000);
+                });
+
+            return false;
+        }
+    </script>
 </body>
 </html>

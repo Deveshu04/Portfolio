@@ -27,9 +27,9 @@
                 </button>
                 <div class="filter-dropdown" id="filterDropdown">
                     <div class="filter-option active" data-value="all">All Projects</div>
-                    <div class="filter-option" data-value="web">Web Development</div>
-                    <div class="filter-option" data-value="data">Data Science</div>
-                    <div class="filter-option" data-value="vision">Computer Vision</div>
+                    <div class="filter-option" data-value="ai">AI/ML Projects</div>
+                    <div class="filter-option" data-value="data">Data Science Projects</div>
+                    <div class="filter-option" data-value="dev">Development Tools</div>
                 </div>
             </div>
         </nav>
@@ -46,32 +46,47 @@
                     </div>
                 </div>
                 <div class="projects-grid">
-                    <!-- Web Development Projects -->
-                    <div class="project-card featured" data-category="web">
+                    <!-- AI/ML Projects -->
+                    <div class="project-card featured" data-category="ai">
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">E-Commerce Platform</h3>
-                                <p class="project-description">A full-stack e-commerce solution built with React and Node.js</p>
+                                <h3 class="project-title">AI-Powered Content Creation Platform</h3>
+                                <p class="project-description">An AI-driven platform for generating social media posts, blogs, and marketing materials with customizable tone and optimization features.</p>
                             </div>
                             <ul class="project-features">
-                                <li class="project-feature">React.js</li>
-                                <li class="project-feature">Node.js</li>
-                                <li class="project-feature">MongoDB</li>
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">OpenAI GPT</li>
+                                <li class="project-feature">Flask/Django</li>
                             </ul>
                             <a href="#" class="project-button">View Project</a>
                         </div>
                     </div>
 
-                    <div class="project-card" data-category="web">
+                    <div class="project-card" data-category="ai">
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">Task Manager</h3>
-                                <p class="project-description">A Vue.js-powered task management application</p>
+                                <h3 class="project-title">Resume Screening and Interview Assistant</h3>
+                                <p class="project-description">AI-powered system for automated resume screening and AI-driven interviews with custom question generation and interactive simulations.</p>
                             </div>
                             <ul class="project-features">
-                                <li class="project-feature">Vue.js</li>
-                                <li class="project-feature">Vuex</li>
-                                <li class="project-feature">Firebase</li>
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">spaCy/NLTK</li>
+                                <li class="project-feature">GPT-4</li>
+                            </ul>
+                            <a href="#" class="project-button">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="ai">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">AI Chatbot with Personalized Learning</h3>
+                                <p class="project-description">Adaptive AI chatbot delivering personalized tutoring and career guidance with dynamic response generation and user profiling.</p>
+                            </div>
+                            <ul class="project-features">
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">Hugging Face</li>
+                                <li class="project-feature">OpenAI API</li>
                             </ul>
                             <a href="#" class="project-button">View Project</a>
                         </div>
@@ -81,29 +96,59 @@
                     <div class="project-card" data-category="data">
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">Customer Segmentation</h3>
-                                <p class="project-description">ML-based customer segmentation for targeted marketing</p>
+                                <h3 class="project-title">Fraud Detection System</h3>
+                                <p class="project-description">Machine learning model for detecting fraudulent transactions with real-time detection and reporting capabilities.</p>
                             </div>
                             <ul class="project-features">
                                 <li class="project-feature">Python</li>
                                 <li class="project-feature">Scikit-learn</li>
-                                <li class="project-feature">Pandas</li>
+                                <li class="project-feature">Flask</li>
                             </ul>
                             <a href="#" class="project-button">View Project</a>
                         </div>
                     </div>
 
-                    <!-- Computer Vision Projects -->
-                    <div class="project-card" data-category="vision">
+                    <div class="project-card" data-category="data">
                         <div class="project-content">
                             <div class="project-header">
-                                <h3 class="project-title">Object Detection</h3>
-                                <p class="project-description">Real-time object detection using YOLO</p>
+                                <h3 class="project-title">Stock Price Prediction Model</h3>
+                                <p class="project-description">Advanced LSTM neural network model for predicting stock price movements with time series analysis and visualization.</p>
                             </div>
                             <ul class="project-features">
                                 <li class="project-feature">Python</li>
-                                <li class="project-feature">OpenCV</li>
-                                <li class="project-feature">YOLO</li>
+                                <li class="project-feature">TensorFlow</li>
+                                <li class="project-feature">Keras</li>
+                            </ul>
+                            <a href="#" class="project-button">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="data">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">Risk Modeling for Investment Banking</h3>
+                                <p class="project-description">Risk assessment model incorporating market volatility, credit risk, and regulatory factors with Monte Carlo simulations.</p>
+                            </div>
+                            <ul class="project-features">
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">NumPy/SciPy</li>
+                                <li class="project-feature">Dash</li>
+                            </ul>
+                            <a href="#" class="project-button">View Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Development Tools -->
+                    <div class="project-card" data-category="dev">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title">Code Documentation Generator</h3>
+                                <p class="project-description">Automated documentation generation tool for software codebases with AI-powered comment generation and multiple output formats.</p>
+                            </div>
+                            <ul class="project-features">
+                                <li class="project-feature">Python</li>
+                                <li class="project-feature">Tree-Sitter</li>
+                                <li class="project-feature">GPT-4</li>
                             </ul>
                             <a href="#" class="project-button">View Project</a>
                         </div>
