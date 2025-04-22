@@ -163,10 +163,12 @@
         (function() {
             // Initialize EmailJS with public key from environment variable
             emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
+            console.log('EmailJS Initialized');
         })();
 
         function sendEmail(e) {
             e.preventDefault();
+            console.log('Sending email...');
 
             const btn = document.querySelector('form button');
             const originalText = btn.textContent;
@@ -174,10 +176,15 @@
             btn.disabled = true;
 
             const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                title: "Contact Form Submission",
                 message: document.getElementById('message').value,
             };
+            
+            console.log('Template params:', templateParams);
+            console.log('Using Service ID:', process.env.EMAILJS_SERVICE_ID);
+            console.log('Using Template ID:', process.env.EMAILJS_TEMPLATE_ID);
 
             emailjs.send(
                 process.env.EMAILJS_SERVICE_ID,
@@ -185,6 +192,7 @@
                 templateParams
             )
                 .then(function(response) {
+                    console.log('SUCCESS!', response);
                     btn.textContent = 'Message Sent!';
                     document.getElementById('contact-form').reset();
                     setTimeout(() => {
@@ -192,8 +200,8 @@
                         btn.disabled = false;
                     }, 3000);
                 }, function(error) {
+                    console.error('FAILED...', error);
                     btn.textContent = 'Error Sending';
-                    console.error('Failed to send message:', error);
                     setTimeout(() => {
                         btn.textContent = originalText;
                         btn.disabled = false;
