@@ -3,11 +3,17 @@ config.js
 
 # Environment variables
 .env
+.env.local
+.env.*.local
 
 # Dependencies
 node_modules/
 
-# IDE specific files
+# Build output
+dist/
+build/
+
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
