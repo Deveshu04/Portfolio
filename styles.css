@@ -638,21 +638,47 @@ body::before {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 3rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
 }
 
 .neon-icon {
-    color: var(--text-primary);
-    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary);
     transition: all 0.3s ease;
-    opacity: 0.8;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: var(--card-bg);
+    min-width: 120px;
+}
+
+.neon-icon i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.neon-icon span {
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .neon-icon:hover {
-    color: rgba(255, 255, 255, 0.9);
-    opacity: 1;
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    background: rgba(151, 71, 255, 0.1);
+    box-shadow: 0 0 20px rgba(151, 71, 255, 0.3);
+}
+
+.neon-icon:hover i {
+    transform: scale(1.1);
 }
 
 /* Footer */
