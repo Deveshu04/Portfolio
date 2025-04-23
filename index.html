@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="config.js"></script>
 </head>
 <body>
     <div class="beam-container"></div>
@@ -165,96 +163,7 @@
         </section>
     </main>
 
-    <!-- Popup Notification -->
-    <div class="popup-overlay" id="notificationPopup">
-        <div class="popup-content">
-            <h3>Thank You!</h3>
-            <p>Your message has been received. I'll get back to you soon!</p>
-            <button class="popup-button" onclick="closePopup()">OK</button>
-        </div>
-    </div>
-
     <script src="script.js"></script>
     <script src="cartoon.js"></script>
-    <!-- Load EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        // EmailJS configuration will be loaded from environment variables
-        (function() {
-            // Initialize EmailJS with public key from environment
-            emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
-            console.log('EmailJS initialized');
-        })();
-
-        function showPopup() {
-            const popup = document.getElementById('notificationPopup');
-            popup.classList.add('show');
-            console.log('Showing popup');
-        }
-
-        function closePopup() {
-            const popup = document.getElementById('notificationPopup');
-            popup.classList.remove('show');
-            console.log('Closing popup');
-        }
-
-        async function sendEmail(e) {
-            e.preventDefault();
-            console.log('Starting email send process...');
-
-            const form = document.getElementById('contact-form');
-            
-            // Check form validity
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return false;
-            }
-
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = 'Send Message';
-            
-            try {
-                // Disable form and update button
-                form.querySelectorAll('input, textarea').forEach(el => el.disabled = true);
-                btn.textContent = 'Sending...';
-                btn.disabled = true;
-
-                const templateParams = {
-                    from_name: document.getElementById('name').value,
-                    from_email: document.getElementById('email').value,
-                    subject: document.getElementById('subject').value,
-                    message: document.getElementById('message').value
-                };
-
-                console.log('Sending with params:', templateParams);
-
-                const response = await emailjs.send(
-                    process.env.EMAILJS_SERVICE_ID,
-                    process.env.EMAILJS_TEMPLATE_ID,
-                    templateParams
-                );
-
-                console.log('SUCCESS!', response);
-                showPopup();
-                form.reset();
-            } catch (error) {
-                console.error('FAILED...', error);
-                const popup = document.getElementById('notificationPopup');
-                const popupTitle = popup.querySelector('h3');
-                const popupMessage = popup.querySelector('p');
-                popupTitle.textContent = 'Error';
-                popupMessage.textContent = 'Failed to send message. Please try again.';
-                showPopup();
-            } finally {
-                btn.textContent = originalText;
-                btn.disabled = false;
-                form.querySelectorAll('input, textarea').forEach(el => el.disabled = false);
-            }
-
-            return false;
-        }
-
-        document.getElementById('contact-form').addEventListener('submit', sendEmail);
-    </script>
 </body>
 </html>
