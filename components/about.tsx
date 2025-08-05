@@ -80,6 +80,7 @@ export default function About() {
                         height={300}
                         width={500}
                         className="rounded-lg object-cover w-full h-[250px]"
+                        style={{ objectPosition: 'center top' }}
                       />
                     </div>
                   )}

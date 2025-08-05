@@ -70,23 +70,8 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-0">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl font-bold font-orbitron glow-text mb-4">
-            Leadership & Recognition
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A journey of leadership, innovation, and professional growth through competitive achievements, 
-            organizational roles, and transformative experiences.
-          </p>
-        </motion.div>
 
         <div className="space-y-8">
           {achievements.map((achievement, index) => {
