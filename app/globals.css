@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 8px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.2), 0 0 30px hsl(var(--primary) / 0.1);
+}
+
+.curriculum-timeline-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.animate-draw {
+  animation: draw-path 5s ease-in-out forwards;
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
