@@ -63,7 +63,7 @@ export default function Hero() {
           ref={subtitleRef}
           className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 opacity-0"
         >
-          Data Scientist & Gen AI Developer crafting intelligent solutions for tomorrow's challenges.
+          Data Scientist & Gen AI Developer crafting intelligent solutions for tomorrow&apos;s challenges.
         </p>
         <div ref={buttonRef} className="opacity-0">
           <Button

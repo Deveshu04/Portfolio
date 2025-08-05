@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+
 import Image from 'next/image';
 import { TracingBeam } from './ui/tracing-beam';
 
@@ -10,10 +10,10 @@ const content = [
     description: (
       <>
         <p>
-          Currently pursuing BS in Data Science and Applications from IIT Madras, I've completed my Foundation and Diploma levels with expertise in both Programming and Data Science tracks. My academic journey has equipped me with strong foundations in mathematics, statistics, machine learning, and full-stack development.
+          Currently pursuing BS in Data Science and Applications from IIT Madras, I&apos;ve completed my Foundation and Diploma levels with expertise in both Programming and Data Science tracks. My academic journey has equipped me with strong foundations in mathematics, statistics, machine learning, and full-stack development.
         </p>
         <p className="mt-4">
-          Through rigorous coursework and hands-on projects, I've developed proficiency in Python, Java, web technologies, and advanced data science tools, preparing me for the evolving landscape of technology and AI.
+          Through rigorous coursework and hands-on projects, I&apos;ve developed proficiency in Python, Java, web technologies, and advanced data science tools, preparing me for the evolving landscape of technology and AI.
         </p>
       </>
     ),
@@ -43,7 +43,7 @@ const content = [
           My projects have consistently delivered significant business value - from reducing fraud response times by 87% to improving ESG risk assessment precision by 15%. I believe in creating technology that not only works but transforms how organizations operate and make decisions.
         </p>
         <p className="mt-4">
-          Whether it's developing quantum-inspired optimization engines or building privacy-preserving synthetic data generators, I'm passionate about pushing the boundaries of what's possible at the intersection of AI, data science, and software engineering.
+          Whether it&apos;s developing quantum-inspired optimization engines or building privacy-preserving synthetic data generators, I&apos;m passionate about pushing the boundaries of what&apos;s possible at the intersection of AI, data science, and software engineering.
         </p>
       </>
     ),

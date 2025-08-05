@@ -19,7 +19,7 @@ export default function Contact() {
             Contact Transmission
           </h2>
           <p className="text-muted-foreground mb-12">
-            Ready to collaborate on the next breakthrough in AI? Let's connect and build something extraordinary together.
+            Ready to collaborate on the next breakthrough in AI? Let&apos;s connect and build something extraordinary together.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-lg mx-auto">
@@ -60,7 +60,7 @@ export default function Contact() {
                   <Linkedin className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-lg font-bold font-orbitron text-primary-foreground mb-2">LinkedIn</h3>
-                <p className="text-sm text-muted-foreground mb-3">Let's connect professionally</p>
+                <p className="text-sm text-muted-foreground mb-3">Let&apos;s connect professionally</p>
                 <div className="flex items-center text-primary text-sm font-medium">
                   Connect <ExternalLink className="w-4 h-4 ml-1" />
                 </div>
